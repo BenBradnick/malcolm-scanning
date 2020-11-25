@@ -17,3 +17,6 @@ coverage = "*"
 # Pinning black stops us having to allow pre-releases globally
 black = "==19.10b0"
 pylint = "*"
+
+[scripts]
+scan = "python scan.py"

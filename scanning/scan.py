@@ -1,8 +1,11 @@
 from typing import List, Union
 
-from axisparams import AxisParams
+from scanning.axisparams import AxisParams
 from p4p import Type, Value
 from p4p.client.thread import Context
+
+
+context = Context("pva")
 
 
 class Scan:
@@ -13,7 +16,7 @@ class Scan:
 
     def __init__(self, block_name: str) -> None:
         self.block_name = block_name
-        self.context = Context("pva")
+        self.context = context
 
     def reset(self) -> None:
         self.context.rpc(self.block_name, None, Scan.reset_value)
@@ -27,7 +30,7 @@ class Scan:
         duration: float,
         file_dir: str,
     ):
-        self.report("Configuring scan for {file_dir}")
+        self.report("Configuring scan...")
 
     def report(self, message):
         print(f"{self.block_name}: {message}")
