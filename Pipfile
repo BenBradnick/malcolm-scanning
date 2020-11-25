@@ -1,0 +1,19 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[packages]
+p4p = "*"
+scanpointgenerator = "*"
+annotypes = "*"
+malcolm = "*"
+
+[dev-packages]
+isort = "*"
+flake8-isort = "*"
+flake8 = "*"
+coverage = "*"
+# Pinning black stops us having to allow pre-releases globally
+black = "==19.10b0"
+pylint = "*"
