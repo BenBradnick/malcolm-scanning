@@ -30,6 +30,13 @@ class Scan:
         duration: float,
         file_dir: str,
     ):
+        self.report("Initialising scan...")
+        try:
+            self.abort()
+        except:
+            pass
+        self.reset()
+        
         self.report("Configuring scan...")
 
     def report(self, message):
